@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset = "UTF-8"/>
+<head></head>
+<body>
+<input type = "text" id = "input"/>
+<input type = "button" id = "button" value = "click"/>
+</body>
+<script type="text/javascript">
+var blur = function(){
+	alert("blur事件");
+}
+var do_blur = function(){
+	 var myInput = document.getElementById('input');
+	 myInput.focus();
+	 myInput.addEventListener("blur", function(){
+		setTimeout("blur()",200)
+		},false);
+	}();
+var click = function(){
+	alert("click事件");
+}
+var do_blur = function(){
+	 var myButton = document.getElementById('button');
+	 myButton.addEventListener("click",click,false);
+	}();
+</script>
+</html>
